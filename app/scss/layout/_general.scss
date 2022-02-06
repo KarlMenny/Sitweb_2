@@ -1,0 +1,115 @@
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	outline: none;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+html {
+	height: 100%;
+}
+
+body, html {
+	min-height: 100%;
+	width: 100%;
+}
+
+.clear::after, .clear::before {
+	content: " ";
+	display: table;
+}
+
+.clear::after {
+	clear: both;
+}
+
+/*Main style*/
+body {
+	font: 400 14px Rubik, Arial, sans-serif;
+	color: #A2B9E5;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+img {
+	display: block;
+}
+
+@media (min-width: 1200px) {
+
+	.container {
+		max-width: 1366px;
+	}
+}
+
+.overflow-hidden {
+	overflow: hidden;
+}
+
+.title {
+	position: relative;
+	display: inline-block;
+	margin-bottom: 50px;
+	font-size: 24px;
+	letter-spacing: 0.02em;
+
+	&::before {
+		@include pos($l: 0, $b: -2px);
+		@include size(0, 2px);
+		content: '';
+		background: -webkit-gradient(linear, right top, left top, color-stop(4.17%, #0F1D2F), color-stop(58.33%, #357576), to(#30EDED)), #0F1625;
+		background: -o-linear-gradient(right, #0F1D2F 4.17%, #357576 58.33%, #30EDED 100%), #0F1625;
+		background: linear-gradient(270deg, #0F1D2F 4.17%, #357576 58.33%, #30EDED 100%), #0F1625;
+		-webkit-animation: 1s linear forwards;
+		        animation: 1s linear forwards;
+	}
+}
+
+.playing-gradient::before {
+	-webkit-animation-name: playing-gradient;
+	        animation-name: playing-gradient;
+}
+
+.overflow-hidden {
+	position: relative;
+	-webkit-box-shadow: 5px -5px 60px rgba(9, 206, 198, 0.29);
+	        box-shadow: 5px -5px 60px rgba(9, 206, 198, 0.29);
+	z-index: 1;
+}
+
+@-webkit-keyframes playing-gradient {
+
+	to {
+		width: 100%;
+	}
+}
+
+@keyframes playing-gradient {
+
+	to {
+		width: 100%;
+	}
+}
+
+.slick-track {
+	transition: initial;
+}
+
+
+

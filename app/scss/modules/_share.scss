@@ -1,0 +1,154 @@
+.share {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	width: 100%;
+	font-size: 27px;
+
+	&__item {
+		padding: 0 17.5px;
+	}
+
+	&__link {
+		@include size(65px);
+		position: relative;
+		display: block;
+		line-height: 73px;
+		text-align: center;
+		color: #00A5A7;
+		-webkit-transition: all 0s !important;
+		-o-transition: all 0s !important;
+		transition: all 0s !important;
+
+		&:hover {
+			color: #30EDED;
+		}
+
+		&::before,
+		&::after {
+			@include pos($l: 0);
+			content: '';
+			background: #00A5A7;
+			width: 100%;
+			height: 1px;
+			-webkit-transition: -webkit-transform .5s;
+			transition: -webkit-transform .5s;
+			-o-transition: transform .5s;
+			transition: transform .5s;
+			transition: transform .5s, -webkit-transform .5s;
+			-webkit-transform: scaleY(0);
+			    -ms-transform: scaleY(0);
+			        transform: scaleY(0);
+		}
+
+		&::before {
+			-webkit-transform-origin: right;
+			    -ms-transform-origin: right;
+			        transform-origin: right;
+		}
+
+		&::after {
+			-webkit-transform-origin: left;
+			    -ms-transform-origin: left;
+			        transform-origin: left;
+		}
+
+		&:hover::before {
+			-webkit-transform: scaleX(0);
+			    -ms-transform: scaleX(0);
+			        transform: scaleX(0);
+			-webkit-transform-origin: left;
+			    -ms-transform-origin: left;
+			        transform-origin: left;
+			background: #30EDED;
+		}
+
+		&:hover::after {
+			-webkit-transform: scaleX(0);
+			    -ms-transform: scaleX(0);
+			        transform: scaleX(0);
+			-webkit-transform-origin: right;
+			    -ms-transform-origin: right;
+			        transform-origin: right;
+			background: #30EDED;
+		}
+
+		& div {
+			height: 100%;
+		}
+
+		& div::before,
+		& div::after {
+			@include pos();
+			content: '';
+			background: #00A5A7;
+			width: 1px;
+			height: 100%;
+			-webkit-transition: -webkit-transform .5s;
+			transition: -webkit-transform .5s;
+			-o-transition: transform .5s;
+			transition: transform .5s;
+			transition: transform .5s, -webkit-transform .5s;
+			-webkit-transform: scaleY(0);
+			    -ms-transform: scaleY(0);
+			        transform: scaleY(0);
+		}
+
+		& div::before {
+			left: 0;
+			-webkit-transform-origin: bottom;
+			    -ms-transform-origin: bottom;
+			        transform-origin: bottom;
+		}
+
+		& div::after {
+			right: 0;
+			-webkit-transform-origin: top;
+			    -ms-transform-origin: top;
+			        transform-origin: top;
+		}
+
+		&:hover div::before {
+			-webkit-transform: scaleY(1);
+			    -ms-transform: scaleY(1);
+			        transform: scaleY(1);
+			-webkit-transform-origin: top;
+			    -ms-transform-origin: top;
+			        transform-origin: top;
+			background: #30EDED;
+		}
+
+		&:hover div::after {
+			-webkit-transform: scaleY(1);
+			    -ms-transform: scaleY(1);
+			        transform: scaleY(1);
+			-webkit-transform-origin: bottom;
+			    -ms-transform-origin: bottom;
+			        transform-origin: bottom;
+			background: #30EDED;
+		}
+	}
+
+	@media (min-width: 1200px) {
+		font-size: 22px;
+		-webkit-box-pack: initial;
+		    -ms-flex-pack: initial;
+		        justify-content: initial;
+
+		&__link {
+			@include size(42px);
+			line-height: 48px;
+		}
+
+		&__item {
+			padding: 0 11.5px;
+
+			&_pl {
+				padding-left: 0;
+			}
+		}
+	}
+}

@@ -1,0 +1,243 @@
+.our-services {
+	padding: 80px 0;
+	background: #0F1D2F;
+	position: relative;
+	z-index: 0;
+
+	&__wrapper {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+		width: 90%;
+	}
+
+	&__img {
+		margin-bottom: 22px;
+	}
+
+	&__anim-block {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+		position: relative;
+		margin-bottom: 40px;
+	}
+
+	&__dashed-stripe {
+		height: 70px;
+		border-left: 2px dashed #79859C;
+	}
+
+	&__img-mouse {
+		@include size(14px, 25px);
+		@include pos($t: 0);
+		background: url('../images/icons/mouse.svg');
+		-webkit-animation: mouse-move .6s ease-in-out forwards;
+		        animation: mouse-move .6s ease-in-out forwards;
+	}
+
+	@-webkit-keyframes mouse-move {
+
+		to {
+			top: 75px;
+		}
+	}
+
+	@keyframes mouse-move {
+
+		to {
+			top: 75px;
+		}
+	}
+
+	&__subtitle {
+		margin-bottom: 25px;
+		font-size: 24px;
+		line-height: 1.3;
+		letter-spacing: 0.04em;
+		color: #79859C;
+	}
+
+	&__text {
+		font-size: 15px;
+		line-height: 1.3;
+		letter-spacing: 0.04em;
+	}
+
+	&__item {
+		position: relative;
+		padding-top: 20px;
+		padding-bottom: 100px;
+
+		&_pb {
+			padding-bottom: 0;
+		}
+	}
+
+	&__counter {
+		@include size(42px);
+		@include pos($t: 0, $r: 18px);
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+		font-size: 15px;
+		border-radius: 50%;
+		background: #0F1D2F;
+
+		&::before {
+			content: '';
+			@include pos($l: 0, $r: 0, $t: 0, $b: 0);
+			z-index: -1;
+			margin: -3px;
+			border-radius: inherit;
+			background: -o-linear-gradient(330deg, rgba(1,201,203,1) 0%, rgba(125,185,232,0) 85%);
+			background: linear-gradient(120deg, rgba(1,201,203,1) 0%, rgba(125,185,232,0) 85%);
+			-webkit-animation: playing-gradient-circle 2s linear infinite;
+			        animation: playing-gradient-circle 2s linear infinite;
+		}
+	}
+
+	@-webkit-keyframes playing-gradient-circle {
+
+		to {
+			-webkit-transform: rotate(360deg);
+			        transform: rotate(360deg);
+		}
+	}
+
+	@keyframes playing-gradient-circle {
+
+		to {
+			-webkit-transform: rotate(360deg);
+			        transform: rotate(360deg);
+		}
+	}
+
+	@media (min-width: 768px) {
+		padding: 100px 0;
+
+		&__title {
+			margin-bottom: 65px;
+		}
+
+		&__items {
+
+			& .our-services__item:nth-child(odd) {
+				padding-right: 45px;
+			}
+
+			& .our-services__item:nth-child(even) {
+				padding-left: 45px;
+			}
+		}
+
+		&__item {
+
+			&_pb-m-768 {
+				padding-bottom: 0;
+			}
+		}
+
+		&__counter {
+			right: 13.67%;
+		}
+
+		&__wrapper {
+			width: 75%;
+		}
+
+		&__img {
+			width: 70px;
+		}
+
+		&__subtitle {
+			font-size: 22px;
+			margin-bottom: 20px;
+		}
+
+		&__text {
+			font-size: 14px;
+		}
+	}
+
+	@media (min-width: 1200px) {
+		padding: 115px 0 180px;
+
+		&__title {
+			font-size: 36px;
+			margin-bottom: 75px;
+			left: 70px;
+		}
+
+		&__counter {
+			left: 29px;
+		}
+
+		&__items {
+			padding-left: 70px;
+			padding-right: 70px;
+
+			& .our-services__item:nth-child(1),
+			& .our-services__item:nth-child(4) {
+				padding-left: 15px;
+				padding-right: 60px;
+			}
+
+			& .our-services__item:nth-child(2),
+			& .our-services__item:nth-child(5) {
+				padding-left: 45px;
+				padding-right: 45px;
+			}
+
+			& .our-services__item:nth-child(3),
+			& .our-services__item:nth-child(6) {
+				padding-left: 60px;
+				padding-right: 15px;
+			}
+
+			& .our-services__item:nth-child(1) .our-services__counter,
+			& .our-services__item:nth-child(4) .our-services__counter {
+				left: -6px;
+			}
+
+			& .our-services__item:nth-child(3) .our-services__counter,
+			& .our-services__item:nth-child(6) .our-services__counter {
+				left: 38px;
+			}
+		}
+
+		&__img {
+			width: initial;
+		}
+
+		&__subtitle {
+			font-size: 24px;
+			margin-bottom: 25px;
+		}
+
+		&__text {
+			font-size: 15px;
+		}
+	}
+}
+

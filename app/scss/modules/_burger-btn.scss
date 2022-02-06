@@ -1,0 +1,84 @@
+.burger-btn {
+	@include pos($t: 26px, $l: 0);
+	height: 24px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	z-index: 3;
+
+	&_is-active {
+		@include size(30px);
+		left: 18px;
+		top: 23px;
+	}
+
+	&_is-active &__strip:nth-child(3) {
+		opacity: 0;
+	}
+
+	&_is-active &__strip:nth-child(2),
+	&_is-active &__strip:nth-child(4) {
+		width: 30px;
+		background: -webkit-gradient(linear, left top, right top, from(#0a5459),color-stop(50%, #30eded),to(#0a5459));
+		background: -o-linear-gradient(left, #0a5459 0%,#30eded 50%,#0a5459 100%);
+		background: linear-gradient(to right, #0a5459 0%,#30eded 50%,#0a5459 100%);
+	}
+
+	&_is-active &__strip:nth-child(2) {
+		-webkit-transform: translateY(13px) rotate(45deg);
+		    -ms-transform: translateY(13px) rotate(45deg);
+		        transform: translateY(13px) rotate(45deg);
+	}
+
+	&_is-active &__strip:nth-child(4) {
+		-webkit-transform: translateY(-13px) rotate(-45deg);
+		    -ms-transform: translateY(-13px) rotate(-45deg);
+		        transform: translateY(-13px) rotate(-45deg);
+	}
+
+	&_is-active &__square {
+		@include size(4px);
+		@include pos($t: 0, $l: 0, $r: 0, $b: 0);
+		margin: auto;
+		display: block;
+		-webkit-transform: rotate(-45deg);
+		    -ms-transform: rotate(-45deg);
+		        transform: rotate(-45deg);
+		background-color: #000;
+		z-index: 1;
+	}
+
+	&__strip {
+		@include size(68px, 4px);
+		display: block;
+		background: -webkit-gradient(linear, left top, right top, color-stop(16.67%, #0C1C30), color-stop(39.56%, #0B6F76), color-stop(58.77%, #09CEC6)), #09CAC3;
+		background: -o-linear-gradient(left, #0C1C30 16.67%, #0B6F76 39.56%, #09CEC6 58.77%), #09CAC3;
+		background: linear-gradient(90deg, #0C1C30 16.67%, #0B6F76 39.56%, #09CEC6 58.77%), #09CAC3;
+		-webkit-transition: all .3s ease-in-out;
+		-o-transition: all .3s ease-in-out;
+		transition: all .3s ease-in-out;
+
+		&_width-1 {
+			width: 65px;
+		}
+
+		&_width-2 {
+			width: 56px;
+		}
+	}
+
+	&__square {
+		display: none;
+	}
+
+	@media (min-width: 992px) {
+		display: none;
+	}
+}
